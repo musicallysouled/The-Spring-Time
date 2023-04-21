@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spring Time</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .container {
+    padding: 80px 120px;
+  }
+
+  .carousel-inner video{
+    width:100%;
+    margin: auto;
+    object-fit: fill;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  audio{
+    display: none;
+  }
+  #divide{
+    background-color: whitesmoke;
+    padding: 15px 20px;
+    border: 1px solid black;
+    opacity: 0.7;
+  }
+  </style>
+</head>
+<body>  
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <video autoplay muted loop id="myVideo" width="1200" height="700" src="media/tulipvid.mp4" type="video/mp4"></video>
+        <audio id="audio1"><source src="media/spring-birds-loop.mp3"  type="audio/mpeg"></audio>
+        <div class="carousel-caption">
+          <h3>Spring Field</h3>
+          <p>Dance between the tulip fields as if it's spring.</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <video autoplay muted loop id="myVideo" width="1200" height="700" src="media/waterfalls.mp4" type="video/mp4">
+        </video>
+        <audio controls autoplay id="audio2">
+          <source src="media/waterstream-small.mp3" type="audio/mpeg">
+        </audio>
+        <div class="carousel-caption">
+          <h3>Waterfalls</h3>
+          <p>Splashing water sounds that relax your mind.</p>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <video autoplay muted loop id="myVideo" width="1200" height="700" src="media/sky.mp4" type="video/mp4">
+        </video>
+        <audio controls autoplay id="audio3">
+          <source src="media/spring-birds-loop.mp3" type="audio/mpeg">
+        </audio>
+        <div class="carousel-caption">
+          <h3>Spring Sky</h3>
+          <p>Pretty clouds floating up with the birds flying high.</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container text-center">
+  <h3>The Spring Time</h3>
+  <p><em>WELCOMES YOU!</em></p>
+  <p>This page is created for those who love everything about spring!</p>
+  <br>
+  <p>Relax and calm your soul, spring lovers <3</p>
+</div>
+<script type="text/javascript">
+  $('.carousel').on('slide.bs.carousel', function (e) {
+  var currentSlide = $(e.relatedTarget);
+  var audioId = currentSlide.find('audio').attr('id');
+  var audio = document.getElementById(audioId);
+  audio.play();
+});
+</script>
+<!-- Footer -->
+<footer class="text-center">
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">About</button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-about">
+      <div id="divide">
+        <h2>About</h2>
+      <p>The website is all about celebrating the beauty and joy of spring season. Studies suggest that the study environment can have a significant impact on a student's academic performance and overall learning experience. I welcome students and working professionals who share the love for this season and want to enjoy it even when the season isn't around. I hope you feel relaxed in the little ambience of spring created here.<br><br>Join us, and let's celebrate the beauty of spring season together!  
+      </div>
+      
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#conModal">Contact</button>
+  <div class="modal fade" id="conModal" role="dialog">
+    <div class="modal-contact">
+      <div id="divide">
+        <p> Email: sayantanidey76@gmail.com</p>
+      <a href="https://www.linkedin.com/in/sayantani-dey-25741020a/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#feedModal">Feedback</button>
+  <div class="modal fade" id="feedModal" role="dialog">
+    <div class="modal-feed">
+      <div id="divide">
+        <div class="form">
+        <form>
+        <h2>Feedback</h2>
+        <hr>
+        <label>Name</label><br>
+        <input type="text" name="name" placeholder="Name here" required>
+        <label>Email:</label><br>
+        <input type="text" name="email" placeholder="email@mail.com" required>
+        <label>Comment:</label><br>
+        <input type="text" name="name" required>
+        <button type="submit">Submit</button>
+        </form> 
+      </div>
+      </div>
+  </div>
+</footer>
+</body>
+</html>
